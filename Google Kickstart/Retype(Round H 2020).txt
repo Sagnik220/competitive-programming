@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+const int MAX=1e9+5;
+int main()
+{
+    ll t=1;
+    cin>>t;
+    for(ll i=1;i<=t;i++)
+    {
+        ll n,k,s;
+        cin>>n>>k>>s;
+        ll best_time=0;
+        ll restart=0,backward=0;
+        if(k>=s)
+        {
+            restart=(k-1)+(n+1);
+            backward=abs(k-s)+abs(n-s+1)+(k-1);
+            best_time=min(restart,backward);
+        }
+        cout << "Case #"<<i<< ": "<<best_time<<endl;
+        
+    }
+    return 0;
+}

@@ -68,7 +68,7 @@ int main()
                         {
                             sum=sum+a[i]-1;
                             arr[i]=sum;
-                                    }
+                        }
                         else
                         {
                             sum+=a[i];
@@ -81,14 +81,14 @@ int main()
                         {
                             sum+=a[i];
                             arr[i]=sum;
-                                }
-                    else
-                    {
-                        sum+=a[i]-1;
-                        arr[i]=sum;
-                    }
+                         }
+                         else
+                         {
+                                sum+=a[i]-1;
+                                arr[i]=sum;
+                         }
+                     }
                 }
-            }
             if(a[n-1]%2==0)
             {
                 sum+=a[n-1]-1;

@@ -68,7 +68,7 @@ int main()
                         {
                             sum=sum+a[i]-1;
                             arr[i]=sum;
-                                    }
+                        }
                         else
                         {
                             sum+=a[i];
@@ -81,14 +81,14 @@ int main()
                         {
                             sum+=a[i];
                             arr[i]=sum;
-                                }
-                    else
-                    {
-                        sum+=a[i]-1;
-                        arr[i]=sum;
-                    }
+                         }
+                         else
+                         {
+                                sum+=a[i]-1;
+                                arr[i]=sum;
+                         }
+                     }
                 }
-            }
             if(a[n-1]%2==0)
             {
                 sum+=a[n-1]-1;
@@ -153,47 +153,60 @@ int main()
                 cout << endl;
             }
         }
-            else{
-            long long int sum=0,arr[100000]={};
-            for(int i=0;i<n-1;i++){
-            if(a[i]%2==0){
-            sum+=a[i];
-            arr[i]=sum;
-            }
-            else{
-            sum+=a[i]-1;
-            arr[i]=sum;
-            }
-            }
-            if(a[n-1]%2==0){
-            sum+=a[n-1]-1;
-            }
-            else{
-            sum=sum+=a[n-1];
-            }
-            int q;
-            cin >> q;
-            for(int xyz=1;xyz<=q;xyz++){
-            long long int r;
-            cin >> r;
-            if(r%n==0){
-            if(a[n-1]%2==0){
-            cout << ((r/n)*sum+1) % mod;
-            }
-            else{
-            cout << ((r/n)*sum) % mod;
-            }
-            }
-            else{
-            if(a[r%n-1]%2!=0){
-            cout << ((r/n)*sum+arr[r%n-1]+1) % mod;
-            }
-            else{
-            cout << (((r/n)*sum+arr[r%n-1]) % mod)+1-1;
-            }
-            }
-            cout << endl;
-            }
+            else
+            {
+                    long long int sum=0,arr[100000]={};
+                    for(int i=0;i<n-1;i++)
+                    {
+                            if(a[i]%2==0)
+                            {
+                                    sum+=a[i];
+                                    arr[i]=sum;
+                            }
+                            else
+                            {
+                                    sum+=a[i]-1;
+                                    arr[i]=sum;
+                            }
+                    }
+                    if(a[n-1]%2==0)
+                    {
+                        sum+=a[n-1]-1;
+                    }
+                    else
+                    {
+                        sum=sum+=a[n-1];
+                    }
+                    int q;
+                    cin >> q;
+                    for(int xyz=1;xyz<=q;xyz++)
+                    {
+                            long long int r;
+                            cin >> r;
+                            if(r%n==0)
+                            {
+                            if(a[n-1]%2==0)
+                            {
+                                cout << ((r/n)*sum+1) % mod;
+                            }
+                            else
+                            {
+                                cout << ((r/n)*sum) % mod;
+                            }
+                   }
+                    else
+                    {
+                            if(a[r%n-1]%2!=0)
+                            {
+                                cout << ((r/n)*sum+arr[r%n-1]+1) % mod;
+                            }
+                            else
+                            {
+                                cout << (((r/n)*sum+arr[r%n-1]) % mod)+1-1;
+                            }
+                    }
+                    cout << endl;
+                    }
             }
         }
     return 0;

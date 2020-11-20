@@ -13,25 +13,22 @@ int main()
         ll n;
         cin>>n;
         ll a[n];
+        ll sum=0;
         for(ll i=0;i<n;i++)
         {
             cin>>a[i];
+            sum+=a[i];
+            
         }
         sort(a,a+n);
         ll last_digit=a[n-1];
-        ll sum=0;
-        for(ll i=0;i<n-1;i++)
+        ll c=ceil((sum*1.0)/(n-1));
+        ll total=c*(n-1);
+        if(last_digit>c)
         {
-            sum+=a[i];
+            total=last_digit*(n-1);
         }
-        if(sum!=0 && sum%last_digit==0)
-           {
-               cout<<0<<endl;
-           }
-        else
-        {
-            cout<<abs(sum-last_digit)<<endl;
-        }
+        cout<<total-sum<<endl;
     }
     return 0;
 }

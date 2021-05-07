@@ -8,7 +8,7 @@ int main() {
     {
         int n;
         cin>>n;
-        int a[n];
+        int a[10000];
         for(int i=0;i<n;i++)
         {
             cin>>a[i];
@@ -28,8 +28,6 @@ int main() {
             sort(a,a+n);
             cout<<min(max(a[0]+a[3],a[1]+a[2]),max(a[0]+a[1]+a[2],a[3]))<<endl;
         }
-            
-        
     }
 	return 0;
 }

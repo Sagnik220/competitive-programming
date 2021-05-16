@@ -51,34 +51,31 @@ void display(node* &head)
     }
     cout<<"NULL"<<endl;
 }
-void sortList(node* &head)
+//Inserting at any node(0 based indexing)
+void insertAtany(node* &head,int val,int pos)
 {
-    node* tempz=head;
-    if(tempz==NULL || tempz->next==NULL)
-        display(tempz);
-    node *start = new node();
-    start->next = head;
-    node *curr = head, *prev = start;
-    while(curr)
+    node* n=new node(val);
+    node* curr=head;
+    node* prev=head;
+    if(head==NULL)
     {
-        if(curr->next && (curr->next->data< curr->data))
-        {
-            // Insertion 
-            while(prev->next && (prev->next->data< curr->next->data))
-            {
-                prev = prev->next;
-            }
-            node *temp = prev->next;
-            prev->next = curr->next;
-            curr->next = curr->next->next;
-            prev->next->next = temp;
-            prev = start;
-        } 
-        else
-            curr = curr->next;
+        head=n;
+        return;
     }
-    display(start->next);
+    while(pos!=1)
+    {
+        curr=curr->next;
+        prev=prev->next;
+        pos--;
+    }
+    curr=curr->next;
+    n->next=curr;
+    prev->next=n;
+
+    display(head);
 }
+
+
 int main()
 {
     ios_base::sync_with_stdio(false);
@@ -93,6 +90,8 @@ int main()
     insertAtTail(head,5);
     insertAtTail(head,3);
     insertAtTail(head,6);
+
+    insertAtany(head,0,3);
     
     return 0;
 }

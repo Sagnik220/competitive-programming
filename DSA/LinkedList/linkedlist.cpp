@@ -163,19 +163,7 @@ int main()
     insertAtTail(head,4);
 
     display(head);
-    //Function to search an element in the LinkedList
-
-    //cout<<search(head,5)<<endl;
     
-    //Function to calculate length of LinkedList
-    
-    //length(head);
-    
-    //deleteAtHead(head);
-
-    //reverseLinkedList(head);
-    //display(head);
-    //displaysortList(head);
     reverseLinkedList(head);
 
     return 0;

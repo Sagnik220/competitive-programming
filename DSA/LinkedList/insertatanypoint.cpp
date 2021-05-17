@@ -55,13 +55,16 @@ void display(node* &head)
 void insertAtany(node* &head,int val,int pos)
 {
     node* n=new node(val);
-    node* curr=head;
-    node* prev=head;
-    if(head==NULL)
+    node* temp=head;
+    //Edge Case 
+    if(pos==0 || head==NULL)
     {
+        n->next=head;
         head=n;
         return;
     }
+    node* curr=head;
+    node* prev=head;
     while(pos!=1)
     {
         curr=curr->next;
@@ -85,13 +88,13 @@ int main()
     node* head=NULL;
 
     insertAtTail(head,1);
-    insertAtTail(head,2);
+    /*insertAtTail(head,2);
     insertAtTail(head,4);
     insertAtTail(head,5);
     insertAtTail(head,3);
-    insertAtTail(head,6);
+    insertAtTail(head,6);*/
 
-    insertAtany(head,0,3);
+    insertAtany(head,2,1);
     
     return 0;
 }
